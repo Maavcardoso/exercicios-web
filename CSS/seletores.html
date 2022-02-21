@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selectors</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <!--
+        **Seletores**:
+
+        - *: todos os elementos do documento;
+
+        - elem: podemos utilizar diretamente a tag do elemento, <div>, <span>, <p>... ;
+
+        -.class: Classes são o tipo principal de seletor, podendo aplicar estilos para diferentes tipos de elementos (Priorize esse seletor);
+
+        -#ID: IDs podem ser usadas como classes, contudo, também podem ser identificadores para outras operações além do CSS;
+
+        -[atrib]: Atributos são uteis para códigos JS que alterem o CSS. Contudo, é o que tem processamento mais demorado;
+
+        -:pseudo-classe: Interações que mudam o CSS sem necessidade de um script JS, útil para eventos simples que necessitam da mudança de estilo;
+
+        -::pseudo-elementos: Alteram elementos HTML de forma prática. Útil para especificar o estilo de um elemento específico.
+        
+        **Combinação de Seletores**:
+        
+        Existe dois parentescos: irmãos e filhos.
+        Filhos são tags dentro de uma tag pai;
+        Portanto, irmãos são tags diferentes dentro de um mesmo tag pai;
+        Partindo desse princípio, podemos aplicar combinações entre tags pais, filhos e irmãos.
+
+        -irmão adjacente ( DIV + P ): Aplica o estilo a tag filho (DIV) e ao próximo irmão (P), ou seja, selecionamos uma tag e a próxima na ordem de compilação.
+
+        -irmão geral (DIV ~ P): Aplica o estilo a tag filho (DIV) e qualquer outra tag irmão (P), não necessariamente sendo a proxima na ordem.
+
+        -filho direto (DIV > P): Aplica o estilo ao filho (P) do pai (DIV). Necessariamente a tag filho precisa ser a próxima camada da tag pai, portanto, um
+        terceiro nível de inclusão não se inclui com o primeiro.
+        
+        -descendente (DIV P): Aplica o estilo a qualquer tag filho (P) dentro da tag pai (DIV), independente do nível de inclusão.
+
+    -->
+    <style>
+        /* [feira*=sa] atributo
+              p ~ ol irmão geral
+              section > :nth-child(even) filhos diretos pares. útil qunado aplicamos um estilo "zebrado"
+            */
+         [feira*=sa] {color: yellow; 
+            background-color: salmon;}
+    </style>
+</head>
+
+<body>
+    <div class='tag'>
+        <div class='tag'>
+            <p class='tag'>1</p>
+            <ul class='tag' feira='casa'>
+                <li>Arroz</li>
+                <li>Feijão</li>
+            </ul>
+            <ul class='tag' feira='escritorio empresa'>
+                <li>Café</li>
+                <li>Água</li>
+            </ul>
+            <ol id='aprovados' class='tag'>
+                <li>Maria</li>
+                <li>Pedro</li>
+                <li>Ana</li>
+            </ol>
+            <div id='aninhado' class='tag'>
+                <div class="tag">
+                    <section class='tag'>
+                        <span class='tag'>1</span>
+                        <p class='tag'>2</p>
+                        <span class='tag'>3</span>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

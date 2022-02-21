@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Aninhada</title>
+    <style>
+        .dropdown{ /* controla onde o conteudo deve aparecer, no caso, abaixo da sessão anterior*/
+            position: relative;
+            display: inline-block;           
+        }
+        .dropdown-content{
+          display: none;
+          position: relative;
+          min-width: 160px;
+        }
+        .show{display: block}
+    </style>
+</head>
+<body>  
+  <h1>Projeto</h1>
+    <ul class = "dropdown">
+      <li>
+        <span onclick="myFunction()">backend</span>
+        <ul id="meuDropdown" class="dropdown-content">  
+          <li>
+            <span onclick="myFunctionSub()">app</span>
+            <ul id="meuDropdownSub" class="dropdown-content">
+              <li>produto.js</li>
+              <li>usuario.js</li>
+              <li>venda.js</li>
+            </ul>
+          </li>
+          <li>
+            <span onclick="myFunctionSub1()">config</span>
+            <ul id="meuDropdownSub1" class="dropdown-content">
+              <li>banco.js</li>
+              <li>rotas.js</li>
+              <li>servidor.js</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <span onclick="myFunction1()">frontend</span>
+        <ul id="meuDropdown1" class="dropdown-content">
+          <li>
+            <span onclick="myFunctionSub2()">public</span>
+              <ul id="meuDropdownSub2" class="dropdown-content">
+                <li>app.css</li>
+                <li>app.js</li>
+                <li>index.html</li>
+              </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  <script>
+  function myFunction() {
+  document.getElementById("meuDropdown").classList.toggle("show");
+}
+  function myFunction1() {
+  document.getElementById("meuDropdown1").classList.toggle("show");
+}
+  function myFunctionSub() {
+  document.getElementById("meuDropdownSub").classList.toggle("show");
+}  
+  function myFunctionSub1() {
+  document.getElementById("meuDropdownSub1").classList.toggle("show");
+}  
+  function myFunctionSub2() {
+  document.getElementById("meuDropdownSub2").classList.toggle("show");
+}  
+  </script>  
+</body>
+</html>

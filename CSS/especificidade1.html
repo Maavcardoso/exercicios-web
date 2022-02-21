@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Especificidade CSS</title>
+    <style>
+        /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity 
+        Em linhas gerais, qual é a ordem de especificidade?
+        1.Regra com !important (Não recomendado usar); 
+        2.Seletores mais esprecíficos,
+        3.Última regra processada (Empate)
+        */
+        p{
+            background-color:grey;
+        }
+        .observacao {
+            background-color:khaki;
+            border: inset;
+            padding: 20px!important;
+            font-size: 32px;
+        }
+        p.observacao{
+            background: linear-gradient(to left, #CCFBFF, #EF96C5);
+            padding: 10px;
+        }
+        
+        /* a cor que irá ser mostrada é o gradiente, pois a tag é menos especifica que a classe, que por sua vez é menos especifica que uma tag.classe, mesmo sendo processado posteriormente. 
+        note que o padding continua o mesmo da classe observacao pois a notação !important burla o método padrão.*/
+
+    </style>
+</head>
+
+<body>
+    <p class='observacao'>Olha essa observação!!!!</p>
+</body>
+
+</html>

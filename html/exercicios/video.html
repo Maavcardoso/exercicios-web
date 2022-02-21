@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video</title>
+    <style>
+        .progresso{
+            width: 500px;
+            height: 20px;
+            border:  solid 2px rgb(47, 47, 90);
+            
+        }
+        .divProg{
+            background-color: red;
+            height: 100%;
+            color: white;
+            text-align: right;
+            font-size: 14px;
+        }
+        .controlDiv{
+            display:flex;
+            
+
+        }
+    </style>
+</head>
+<body>
+
+    <video  id="meuVideo" width="800px" height="450px" controlsList="nodownload">
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+    </video>
+    <div class="controlDiv">
+        <div>
+            <button wm-play="meuVideo" onclick="playVideo()">▶️</button>
+            <button wm-pause="meuVideo" onclick="pauseVideo()">⏸️</button>
+        </div>
+        <div wm-progresso="meuVideo" class="progresso"> 
+            <div id="progressBar" class="divProg"></div>
+        </div>
+    </div>
+
+    <script>
+
+        videoVar = document.getElementById("meuVideo");
+        playButton = document.getElementById("wm-play");
+        pauseButton = document.getElementById("wm-pause");
+        progressVar = document.getElementById("progressBar");
+
+
+        function playVideo(){
+            videoVar.play();
+
+        }
+
+        function pauseVideo(){
+            videoVar.pause();
+        }
+
+        function progBar(){
+            let videoDur = videoVar.onloadedmetadata = videoVar.duration; 
+            let videoProg = videoVar.currentTime;
+            barWidth = (videoProg * 100)/videoDur + "%";
+            progressVar.style.width = barWidth;   
+
+        }
+        setInterval( function(){
+            progBar()},100)
+        
+                
+    
+
+    </script>
+</body>
+</html>
+

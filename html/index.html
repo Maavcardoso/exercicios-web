@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXERCÍCIOS HTML</title>
+    <style>
+        #conteudo{
+            padding: 30px 0px;   
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Exercícios HTML</h1>
+    </header>
+    <a href wm-nav="exercicios/teste.html">00 - Teste</a> |
+    <a href wm-nav="exercicios/texto1.html">01 - Texto 1</a> |
+    <a href wm-nav="exercicios/listas.html">02 - Listas</a> |
+    <a href wm-nav="exercicios/listasaninhadas.html">03 - Listas Aninhadas</a> |
+    <a href wm-nav="exercicios/links.html">04 - Links</a> |
+    <a href wm-nav="exercicios/tabelas.html">05 - Tabelas</a> |
+    <a href wm-nav="exercicios/form/form.html">06 - Formulários</a> |
+    <a href wm-nav="exercicios/imagens.html">07 - Imagens</a> |
+    <a href wm-nav="exercicios/video.html">08 - Video</a> |
+    <a href wm-nav="exercicios/naovisuais.html">09 - Tags Não-Visuais</a>
+    <section id="conteudo"></section>
+    <h2>Dicas Legais</h2>
+    <ul>
+        <li>Para criar uma tag com div definida, podemos escrever tag#nomedatag. Assim, ele já criará a tag com a div sem a necessidade de digitar mais códigos. Ex: div#noticias = <'div id="noticias"><'/div></li> 
+        <li>Para criar uma tag com classe CSS definida, podemos escrever tag.nomedaclasse. Ex: span.teste = <'span class="teste"><'/span></li>
+</ul>
+    <footer>
+        Curso em Web Moderno
+    </footer>
+    <script>
+        document.querySelectorAll('[wm-nav]').forEach(link => { /* Estamos associando os links aos comandos abaixo*/
+            const conteudo = document.getElementById('conteudo')
+
+            link.onclick = function(e){ /* quando clicar,*/
+                e.preventDefault() /* Previna o comportamento padrão*/ 
+                fetch(link.getAttribute('wm-nav')) /*requisição ajax*/
+                    .then(resp => resp.text()) /*Transforma a solicitação no conteudo*/
+                    .then(html => conteudo.innerHTML = html) /* Mostra o conteudo da HTML dentro da página*/    
+            }
+        })
+    </script>
+</body>
+</html>

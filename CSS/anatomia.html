@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Anatomia CSS</title>
+    <style>
+        /*
+        para indicarmos uma classe CSS, utilizamos os seletores (com o nome da classe) dentro da tag style. 
+        diferentes seletores podem ter diferentes parâmetros, como palavras, valores numéricos ou os dois. Segue alguns exemplos: 
+        */
+        .selector{
+            color: white;
+            font-size: 30px;
+            text-align: center;
+            /* Multiplos valores*/
+            border: double 5px rgb(9, 18, 68); /* shorthand property. Passamos multiplos valores para um só seletor. */
+            font-family: sans-serif, Helvetica; /* Parâmetro com opções, se por acaso a primeira opção não carregar, será interpretado a segunda opção. */
+            width: calc(100% - 100px);
+            background-color: rgb(162, 162, 236);
+        }
+
+        /* Pseudo-Classe são característica que podemos adicionar à classe quando uma ação for realizada. Nesse caso, sempre quando o ponteiro do mouse estiver em cima da div,
+        ele acionará esta pseudoclasse, alterando os parâmetros do CSS com base no que já foi indicado. */
+
+        .selector:hover{
+            color:red;
+            background-color: sandybrown;
+            border-style: dashed;
+            
+        }
+
+        /* Pseudo-Elementos são "pseudo-objetos" dentro da Div que podemos alterar com parametros CSS. Nesse caso, first-letter representa a primera letra da palavra.*/
+
+        .selector::first-letter {
+            font-size: 60px;
+        }
+
+        /* Padrão de Escrita 
+        dash-case ou camelCase?
+        Qualquer um é interessante. Desde que mantenha consistência e padronização. Pessoalmente, opto por dash-case para CSS e camelCase para JS e HTML. */
+
+    </style>
+</head>
+
+<body>
+    <div class="selector">Conteúdo</div>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Altura e Largura</title>
+    <style>
+        html{
+            height: 100%; /* body agora vai considerar 100% da página, pois o html ocupa a totalidade da página */
+        }
+        body {
+            font-size: 40px;
+            background-color: coral;
+            height: 100%;
+            margin: 0; 
+        }
+
+        div {
+            background-color: seagreen;
+        }
+
+        span {
+            background-color: dodgerblue; /*width e height não são passados para o span, já que o display por padrão é inline */ 
+        }
+
+        span, div{
+            width: 50%;
+            display: block; /* Permite o Span adquirir o estilo de display block */
+            margin: 0;
+            height: 50%; /* não vai surtir efeito pois 50% do body é o mesmo tamanho do original */
+        }   
+    </style>
+</head>
+
+<body>
+    <div>Título</div>
+    <span>Subtítulo</span>
+    
+</body>
+
+</html>

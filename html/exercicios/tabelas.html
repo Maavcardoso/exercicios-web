@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas</title>
+</head>
+<body>
+    <h1>Tabelas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
+                <th>Total</th>
+                <!-- TH representa as colunas-->
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>iPad</td>
+                <td>3289,00</td>
+                <td>5</td>
+                <td>16445,00</td>
+            </tr>
+            <tr>
+                <td>Xiaomi Redmi 9</td>
+                <td>1150,00</td>
+                <td>4</td>
+                <td>4600,00</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" rowspan="2">Total</td>
+                <td>21045,00</td>
+            </tr>
+            <tr>
+                <td>teste</td>
+            </tr>
+        </tfoot>
+    </table>
+<style>
+    table{
+        border-collapse: collapse;
+    }
+    th, td{
+        padding: 10px;
+    }
+    thead tr{
+        border-bottom: solid 3px rgb(65, 65, 65);
+    }
+
+    tbody tr:hover{
+        background-color: rgb(226, 226, 226);
+    }
+    tfoot{
+        background-color: rgb(37, 37, 37);
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+    }
+</style>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links</title>
+</head>
+<body>
+    <h1 id="topo">Links</h1>
+<!-- URL Absoluta -->
+<a href="http://www.google.com.br"> Google mesma janela</a><br>
+<a href="http://www.google.com.br" target="_blank"> Google nova aba</a> <br><br><!-- Abre uma nova aba -->
+
+<!-- URL Relativa-->
+<a href="index.html"> Voltar 1 </a><br> <!-- Busca a página na mesma pasta (Não vai funcionar) -->
+<a href="/index.html">Voltar 2</a><br> <!-- Busca a página na pasta raiz (Não vai funcionar)-->
+<a href="../index.html">Voltar 3 (funcional)</a><br> <!-- Busca a página na pasta anterior (Vai funcionar!)-->
+
+<!-- O local em que se encontra o index.html é na pasta html. Voltar 1 não irá funcionar pois os exercícios estão numa pasta dentro de HTML, portanto não encontra o arquivo index.html
+ Voltar 2 também não irá funcionar, pois irá procurar na pasta raiz (no caso, Z:). index.html está dentro da pasta html, portanto, não irá encontar o arquivo
+ Contudo, Voltar 3 irá funcionar pois links.html (este exercício) esta dentro da pasta exercícios, 
+ que está dentro da pasta HTML, porntato, se voltar para a pasta anterior, encontra o arquivo index.html-->
+
+<!-- URL para EMAIL -->
+<a href="mailto:email@exemplo.com.br">Entre em contato (Link para e-mail)</a><br>
+
+<!-- URL Recursiva -->
+<a href="#noticia">Ir para Noticias</a>
+
+<div id="noticia" style="position:absolute;top:1000px">
+<h1> NOTÍCIA URGENTE!!!</h1>
+<p> Não há noticias urgentes... :o</p>
+<a href="#topo">Ir para o Topo</a>
+</div>
+
+</body>
+</html>

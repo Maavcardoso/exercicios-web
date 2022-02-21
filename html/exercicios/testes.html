@@ -1,0 +1,27 @@
+<style>
+    p{
+        position: absolute;
+    }
+    @keyframes animaLetra{
+        0%{top: 90%}
+        100%{top:50%}
+    }
+</style>
+<body onload="move();">
+<p id="teste">Alo alo alo alo alo alo alo</p>
+</body>
+<script>
+    let x = document.getElementById("teste")
+    function move(){
+        x.style.animation = "animaLetra 5s infinite"
+    }
+
+</script>
+
+function loopSlider(){
+    for(var i = 0; i < imgs.length; i++ ){
+        if(count == imgs.length - 1){
+            count == 0
+            setTimeout(animSlider(), 5000)
+        }
+    }

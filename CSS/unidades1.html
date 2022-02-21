@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Unidades #01</title>
+    <style>
+        /* Unidades podem ser:
+        Absolutas: px, cm, mm: . . .;
+        Viewport (unidade relativa à visuaização da página ): vh, vw, vmin, vmax...;
+        Font:em */
+
+        div{
+
+            font-weight: bold;
+            color: white;
+            border: solid 2px;
+            border-color:black;
+        }
+
+
+        .unidades-absolutas{
+            position:absolute;
+            font-size: 40px;
+            padding:20px;
+            margin:30px;
+            width: 4cm;
+            height: 20mm;
+            top: 150px;
+            background-color: cornflowerblue;
+
+        }
+
+        .unidades-relativas{
+            background-color: indianred;
+            position: absolute;
+            font-size: 4em; /* Tamanho em relação ao padrão do navegador, no caso do Chrome, 16 pixels. O mesmo pode ser alterado nas configurações, diminuindo ou aumentando o tamanho da fonte.*/
+            padding: 5%;
+            margin: .8%;
+            width: 20vw;
+            height: 15vh;
+            bottom: 5%;
+            right: 5%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="unidades-absolutas">Opa!</div>
+    <div class="unidades-relativas">Epa!</div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+<body>
+    <h1>Formulários</h1>
+    <form action="http://localhost:3003/usuarios" method="POST">
+        <input type="hidden" name="id" value="3"> <!-- Esse input não aparece para o usuário, mas ele carrega um valor que o usuário não deve ter acesso.-->
+        <input type="text" name="Nome">
+        <input type="password" name="Senha">
+        <textarea name="Biografia" cols="30" rows="10"></textarea>
+        <div>
+           <input type="radio" name="tipo" value="admin"> Admin
+           <input type="radio" name="tipo" value="regular"> Regular 
+           <!-- Radios com o mesmo nome alternam a seleção, ou seja, nesse caso, só podemos selecionar uma das opções por vez.-->
+        </div>
+        <div>
+            <input type="checkbox" name="ativo" > Ativo 
+        </div>
+
+        <select name="estado">
+            <option value="">Selecionar</option>
+            <option value="ac">Acre</option>
+            <option value="ba">Bahia</option>
+            <option value="sp">São Paulo</option>
+        </select>
+        <select name="interesses" multiple size="5">
+            <option value="js">JavaScript</option>
+            <option value="java">Java</option>
+            <option value="php">PHP</option>
+            <option value="python">Python</option>
+            <option value="go">Go</option>
+            <option value="c">C</option>
+        </select>
+        
+        <button formaction="http://localhost:3003/usuarios">Incluir</button> 
+        <button formaction="http://localhost:3003/usuarios/3">Alterar</button>   
+    
+    </form>
+
+    <style>
+        input, textarea, select {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type=radio],
+        input[type=checkbox] {
+            display:inline;
+        }
+    </style>
+    
+</body>
+</html>

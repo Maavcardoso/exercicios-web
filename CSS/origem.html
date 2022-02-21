@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Origem CSS: Externo, Interno e Inline</title>
+    <style>
+
+        /* A classe CSS da página pode ser definida pela tag style, que geralmente é colocada na tag head da página. */
+
+        body{
+            background-color: mediumaquamarine;
+        }
+    </style>
+
+    <!-- para referenciar uma folha de estilo externa, segue o exemplo. Um atalho é utilizar link:css, assim ele já cria a tag com as propriedades da classe que irá ser linkada. 
+    caso a relação não esteja explicitamente citada, ele não irá aplicar o estilo caso haja uma referencia interna.-->
+
+    <link rel="stylesheet" href="css/externo.css">
+</head>
+
+ <!-- Existe também a categoria inline, que aplica a classe dieretamente a tag. Contudo, esse método é apenas recomendado para testar estilos, já que se usado de forma ordinária pode
+tornar o código mais difícil de ler e menos modular, já que a alteração só se aplica a aquela tag especifica.
+Além da referencia, a segunda prioridade dada ao estilo é por ordem de compilação, ou seja, o comando que for enviado "mais tarde" será o aplicado. Contudo, na ordem de importância, inline 
+tem prioridade acima de qualquer outro. -->
+
+<body style="background-color: mediumslateblue;">
+    <h1>E agora?</h1>
+</body>
+
+</html>
