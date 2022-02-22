@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <label for="compras">Compras</label>
+        <ul id="compras" destino='escritório' data-urgencia="5">
+            <li>Café</li>
+            <li>Água</li>
+            <li>Copo Descartável</li>
+        </ul>
+    </div>
+    <script>
+        const lista = document.querySelector('div ul[destino="escritório"]')
+        //const lista1 = document.querySelector('#compras')
+        console.log(lista)
+        console.log('Elemento "ul ..............')
+        console.log('childNodes: ', lista.childNodes)
+        console.log('ID: ', lista.id)
+        console.log('getAttribute Teste: ', lista.destino)
+        console.log('getAttribute: ', lista.getAttribute('destino'))
+        console.log('hasAttribute (destino): ', lista.hasAttribute('Destino'))
+         /* Se quisermos acessar uma propriedade específica, 
+        usa-se getAttribute pois estamos analisando o atributo da propriedade. 
+        Não conseguimos acessar a propriedade com a denotação ".", sende necessario o uso do getAttribute.
+        id é a propriedade genérica reconhecida pela IDE que buscará o id do elemento. */
+        lista.setAttribute('destino', 'empresa') // Altera valor do destino.
+        console.log('getAttribute: ', lista.getAttribute('destino'))
+        lista.setAttribute('status', 'aberto') // Adiciona nova propriedade.
+        console.log('hasAttribute (status): ', lista.hasAttribute('status')) // output: True
+        lista.removeAttribute('destino')
+        console.log('hasAttribute (destino): ', lista.hasAttribute('destino')) // output: False
+        console.log('data-urgencia: ', lista.dataset.urgencia)
+        lista.dataset.urgencia = 4
+        console.log('data-urgencia: ', lista.dataset.urgencia)
+
+        // cuidado
+        const label = document.querySelector('label')
+        console.log(label.for) // vai voltar undefined pq for é uma palavra reservada da IDE.
+        console.log(label.htmlFor) // da certo
+        console.log(label.getAttribute('for')) // também funciona
+    </script>
+</body>
+   

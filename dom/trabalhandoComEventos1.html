@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Trabalhando com Eventos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <!--onclick="navegarEm5s(event)" invoca pelo HTML. É explicito, porém o hardcode tira a mobilidade-->
+        <a espera5s href="https://google.com.br">Google</a>
+    </div>
+    <script>
+        function navegarEm5s(e){
+            e.preventDefault() // Previne o comportamento padrão do link, permitindo os 5 seg de espera.
+            console.log('saindo em 5 seg ...')
+            setTimeout(() => {
+                const link =
+                window.location.href = e.target.href /* target é um parametro importante, 
+                pois indica o html que recebeu o evento (onclick), no caso, o proprio link*/
+            }, 5000)
+        }
+       // const a = document.querySelector('a')
+        const a = document.querySelector('[espera5s]')
+        a.onclick = navegarEm5s /*Invoca diretamente do JS.
+        é implícito, sendo pouco viavél para se referir, mas sendo mais dinâmico.
+        Nesse caso, podemos utilizar um atributo personalizado no elemento para ser chamado no JS.
+        Atributos personalizados são mais explicitos porém podem ser utilizados para métodos
+        dinâmicos*/
+    </script>
+</body>

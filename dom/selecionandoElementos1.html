@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    <script>       
+
+        document.getElementById('primeiro').classList.add('destaque');
+
+        const divs = document.getElementsByTagName('div'); // cria um htmlCollection, semelhante à array mais com menos possibilidades de manipulação.
+
+        Array.from(divs).forEach(e => e.classList.remove('destaque')); // Aqui criamos uma array a partir do HTMLCollection, rodando um for que remove a class 'destaque' dos elementos da array.
+
+        const divsArray = [...divs]; // Criando Array com método spread
+
+        divsArray.forEach(e => e.classList.add('destaque')); // Para cada elemento da Array adicionara a classe destaque
+
+        const ultimosElementos = document.getElementsByClassName('ultimo');
+            for(let e of ultimosElementos) {
+                e.classList.remove('destaque'); // Como se trata de um HTML Collection, é necessario que a repetição seja For, o metodo foreach funciona apenas em arrays e nodeLists.
+            }
+
+    </script>
+</body>
+</html>
