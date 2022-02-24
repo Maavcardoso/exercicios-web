@@ -18,27 +18,28 @@ console.log(fn.prop)
 const logValue = value => console.log(value)
 const logFnResult = fnParam => console.log(fnParam())
 
-logFnResult(fn)
+//logFnResult(fn)
 
 //Receber e retornar funções
 // const controlFnExec = fnParam => allowed => {
 //     if (allowed) {
-//       fnParam();
+//       console.log(fnParam())
 //     }
 //   }
 
-// const handleFnExecution = controlFnExec(fn)
 
-// handleFnExecution(true)
-// handleFnExecution()
+const handleFnExecution = controlFnExec(fn)
+
+handleFnExecution(true)
+handleFnExecution()
 
 
 //controlFnExec como função
-// function controlFnExec(fnParam) {
+function controlFnExec(fnParam) {
 
-//     return function(allowed) {
-//       if (allowed) {
-//         fnParam();
-//       }
-//     }
-//   }
+    return function(allowed) {
+      if (allowed) {
+        console.log(fnParam())
+      }
+    }
+  }
