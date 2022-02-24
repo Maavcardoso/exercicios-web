@@ -22,3 +22,26 @@ console.log('\nString sem a ultima letra:', withoutLastChar)
 
 const secondToEnd = text.slice(1)
 console.log('\nString a partir da segunda letra:', secondToEnd)
+
+// Retorna N caracteres a partir de uma posição.
+// const twoBeforeFirstPos = text.substr(0,2) // Está ultrapassado. Hoje se usa .substring
+
+const twoBeforeFirstPos = text.substring(0,2)
+console.log('\nAs duas primeiras letras são:', twoBeforeFirstPos)
+
+const pi = 3.14159265
+console.log('\nstrings de números')
+
+// Transforma número em string
+const numAsStr = pi.toString()
+console.log(`\nTipo da variável pi\nantes .toString: ${typeof pi}\napós .toString: ${typeof numAsStr}`)
+
+// Retorna o número com x casas decimais.
+const fixedTwoDecimals = pi.toFixed(2)
+console.log(`\n${pi} após .toFixed: ${fixedTwoDecimals}`)
+
+// Transforma uma string em float
+console.log("\nParse para Float:", parseFloat('15.40'))
+
+// Transforma uma string em int
+console.log("\nParse para int:", parseInt('13.20'))
