@@ -1,4 +1,4 @@
-const users = ['Anna, Lais, Beatriz']
+const users = ['Anna, Chico, zezin']
 
 const gender = {
     MAN: Symbol('M'),
