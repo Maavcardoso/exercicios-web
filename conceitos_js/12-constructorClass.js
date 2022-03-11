@@ -39,4 +39,5 @@ class Cachorro extends Animal {
 const labrador = new Cachorro(false)
 const pincher = new Cachorro(true)
 
-console.log(pug)
+console.log(pincher)
+pincher.latir()
