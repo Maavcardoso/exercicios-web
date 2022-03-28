@@ -14,6 +14,17 @@
     <div>2</div>
 
     <script>
-        // ...
+        $('div').hide(5000).show(5000).fadeOut(5000)
+        console.log($.isEmptyObject({})) // utilizando $ para chamar uma função utilitario com jquery.
+        console.log(jQuery.inArray(3, [1, 2, 3]))
+
+        $.fn.fundoVerde = function () {
+            this.css('background-color', 'green')
+            return this // retornando o objeto podemos encadear funções jquery.
+        }
+
+        $('body').fundoVerde().fadeOut(1000)
+
+        
     </script>
 </body>
