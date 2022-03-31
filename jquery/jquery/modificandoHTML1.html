@@ -13,8 +13,34 @@
     <div id='conteudo1'></div>
     <div id='conteudo2'></div>
     <div id='conteudo3'></div>
+    <div>Sem ID</div>
 
     <script>
-        // ...
+
+        // conteudo 1
+
+        $('#conteudo1').append('<p>1<p>')
+        
+        // conteudo 2
+
+        const elementos = [
+            $('<li>').append('Arroz'),
+            $('<li>').append('Feijão'),
+            $('<li>').append('Bisteca')
+        ]
+
+        const lista = $('<ul><li>Sorvete</li></ul>').prepend(elementos) // prepend adiciona os elementos antes do li da lista
+        $('#conteudo2').append(lista)
+        
+        // conteudo 3
+
+        $('#conteudo3').append('<h2>2</h2>', '<h3>3</h3>')
+                .prepend('<h1>1</h1>')
+        $('#conteudo3').html('<h1>123</h1>')
+        $('#conteudo3').text('<h1>123</h1>')
+
+        // Alterando todos
+
+        $('div[id]').html('<strong>Alterei Todos!!!</strong>')
     </script>
 </body>
