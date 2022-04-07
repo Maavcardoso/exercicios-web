@@ -17,6 +17,29 @@
     <p class='numero'>5</p>
 
     <script>
-        // ...
+        $("#div1").append(", 2").prepend("0, ")
+        $("<span>, 3</span>").appendTo("#div1")
+        $("<span>-1, <span>").prependTo('#div1')
+        
+        $('#div2').before('<p>Antes</p>')
+        $('#div2').after('<p>Depois</p>')
+
+        $('<span>Insert Before</span>').insertBefore('#div3')
+        $('<span>Insert After</span>').insertAfter('#div3')
+
+        //$('p.numero').wrap('<div>') // Insere elementos dentro de uma div, para cada um
+        $('p.numero').wrapAll('<div id="div4">') // Insere todos os elementos dentro da mesma div
+        $("#div4").empty()
+        $('#div3, #div4').prev().remove()
+
+       //$('<div>Substituto</div>').replaceAll('body > p')
+        //$('body > p').replaceWith('<div>Substituto</div>')
+        
+        // replaceWith também pode retornar uma função callback
+        $('body > p').replaceWith(function () {
+            return $('<div>').html($(this).html())
+                // retorna um div com o mesmo conteudo do paragrafo
+        })
+        
     </script>
 </body>
